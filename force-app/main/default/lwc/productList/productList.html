@@ -1,0 +1,18 @@
+<template>
+  <lightning-card title="Product List" icon-name="custom:custom14">
+    <div class="slds-m-around_medium">
+      <template if:true={productList.data}>
+        <template for:each={productList.data} for:item="product">
+          <p key={product.Id}>{product.Name}</p>
+          <p key={product.Id}>{product.MSRP__c}</p>
+          <p key={product.Id}>
+            <img src={product.Picture_URL__c} />
+          </p>
+        </template>
+      </template>
+      <template if:true={productList.error}>
+        <!-- <c-error-panel errors={productList.error}></c-error-panel>-->
+      </template>
+    </div>
+  </lightning-card>
+</template>
